@@ -1,3 +1,26 @@
 {
-    "welcome_to_react": "Bienvenido a React y react-i18next"
+    "main_title" : "Calcula tu huella medioambiental",
+    "home": "Inicio",
+    "about_us": "Sobre nosotros",
+    "sub_title": "Añade un dispositivo",
+    "desktop_pc": "Sobremesa",
+    "laptop": "Portátil",
+    "production": "Producción",
+    "use": "Uso (durante 4 años)",
+    "no_results": "Los resultados aparecerán aquí.",
+    "co2_info": "El potencial de calentamiento global (GWP), es un término utilizado para describir la potencia relativa, molécula por molécula, de un gas de efecto invernadero, teniendo en cuenta cuánto tiempo permanece activo en la atmósfera. Los GWPs utilizados actualmente son los calculados a lo largo de 100 años. El dióxido de carbono se toma como gas de referencia y se le da un GWP a 100 años de 1.",
+    "co2Use_info": "El potencial de calentamiento global (GWP), es un término utilizado para describir la potencia relativa, molécula por molécula, de un gas de efecto invernadero, teniendo en cuenta cuánto tiempo permanece activo en la atmósfera. Los GWPs utilizados actualmente son los calculados a lo largo de 100 años. El dióxido de carbono se toma como gas de referencia y se le da un GWP a 100 años de 1.",
+    "water_info": "La cantidad de agua (en metros cúbicos) utilizada en la producción de este dispositivo.",
+    "adp_info": "Potencial de agotamiento abiótico (ADP) es la cantidad de degradacion de recursos abióticos que puede causar la producción de este dispositivo.",
+    "adpUse_info": "Potencial de agotamiento abiótico (ADP) es la cantidad de degradacion de recursos abióticos que puede causar el uso de este dispositivo durante 4 años.",
+    "ced_info": "La demanda acumulada de energía (CED) de un producto representa el uso directo e indirecto de energía durante todo el ciclo de vida, incluida la energía consumida durante la extracción, fabricación y eliminación de las materias primas y auxiliares.",
+    "brand": "Marca",
+    "model": "Modelo",
+    "year": "Año",
+    "width": "Anchura",
+    "height": "Altura",
+    "depth": "Profundidad",
+    "warning_dimensions": "Indica las dimensiones en milímetros.",
+    "has_external_gpu": "¿Tiene una targeta gráfica externa?",
+    "add": "Añadir"
 }

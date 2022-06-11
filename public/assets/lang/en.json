@@ -1,3 +1,26 @@
 {
-    "welcome_to_react": "Welcome to React and react-i18next"
+  "main_title": "Calculate your environmental print",
+  "home": "Home",
+  "about_us": "About us",
+  "sub_title": "Add a device",
+  "desktop_pc": "Desktop PC",
+  "laptop": "Laptop",
+  "production": "Production",
+  "use": "Use (during 4 years)",
+  "no_results": "Results will appear here.",
+  "co2_info": "Global-warming potential (GWP), is a term used to describe the relative potency, molecule for molecule, of a greenhouse gas, taking account of how long it remains active in the atmosphere. The GWPs currently used are those calculated over 100 years. Carbon dioxide is taken as the gas of reference and given a 100-year GWP of 1.",
+  "co2Use_info": "Global-warming potential (GWP), is a term used to describe the relative potency, molecule for molecule, of a greenhouse gas, taking account of how long it remains active in the atmosphere. The GWPs currently used are those calculated over 100 years. Carbon dioxide is taken as the gas of reference and given a 100-year GWP of 1.",
+  "water_info": "The amount of water (in cubic meters) used to produce this device.",
+  "adp_info": "Abiotic Depletion Potential (ADP) is the amount of degradation of abiotic resources that can cause the production of this device.",
+  "adpUse_info": "Abiotic Depletion Potential (ADP) is the amount of degradation of abiotic resources that can cause the use of this device during 4 year.",
+  "ced_info": "The Cumulative Energy Demand (CED) of a product represents the direct and indirect energy use throughout the life cycle, including the energy consumed during the extraction, manufacturing, and disposal of the raw and auxiliary materials",
+  "brand": "Brand",
+  "model": "Model",
+  "year": "Year",
+  "width": "Width",
+  "height": "Height",
+  "depth": "Depth",
+  "warning_dimensions": "Indicate the dimensios in milimetres.",
+  "has_external_gpu": "Has an external graphics card?",
+  "add": "add"
 }

@@ -1,3 +1,26 @@
 {
-    "welcome_to_react": "Benvingut a React i react-i18next"
+  "main_title": "Calcula la teva petjada mediambiental",
+  "home": "Inici",
+  "about_us": "Sobre nosaltres",
+  "sub_title": "Afegeix un dispositiu",
+  "desktop_pc": "Sobretaula",
+  "laptop": "Portàtil",
+  "production": "Producció",
+  "use": "Ús (durant 4 anys)",
+  "no_results": "Els resultats es mostraran aquí.",
+  "co2_info": "El potencial de calentament global (GWP), es un terme utilitzat per a descriure la potencia relativa, molècula per molècula, d'un gas d'efecte hivernacle, tenint en compte quan temps roman actiu a l'atmósfera. Els GWPs utilitzats actualment son els calculats al llarg de 100 anys. El dióxid de carboni es pren com a gas de referència i se li dona un GWP a 100 anys de 1.",
+  "co2Use_info": "El potencial de calentament global (GWP), es un terme utilitzat per a descriure la potencia relativa, molècula per molècula, d'un gas d'efecte hivernacle, tenint en compte quan temps roman actiu a l'atmósfera. Els GWPs utilitzats actualment son els calculats al llarg de 100 anys. El dióxid de carboni es pren com a gas de referència i se li dona un GWP a 100 anys de 1.",
+  "water_info": "La quantitat d'aigua (en metres cúbics) utilitzada per a produir aquest dispositiu.",
+  "adp_info": "Potencial d'esgotament abiótic (ADP) es la quantitat de degradació de recursos abiótics que pot causar la producció d'aquest dispositivo.",
+  "adpUse_info": "Potencial d'esgotament abiótic (ADP) es la quantitat de degradació de recursos abiótics que pot causar l'ús d'aquest dispositiu durant 4 anys.",
+  "ced_info": "La demanda acumulada d'energía (CED) d'un producte representa l'uso directe i indirecte d'energía durant todo el cicle de vida, incluida l'energía consumida durant l'extracció, fabricació i eliminació de les materies primeres y auxiliars.",
+  "brand": "Marca",
+  "model": "Model",
+  "year": "Any",
+  "width": "Amplada",
+  "height": "Llargada",
+  "depth": "Profunditat",
+  "warning_dimensions": "Indica les dimensions en milímetres.",
+  "has_external_gpu": "¿Té una targeta gràfica externa?",
+  "add": "Afegir"
 }

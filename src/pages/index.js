@@ -16,11 +16,12 @@ import { t } from "i18next";
 function getDeviceInfo(deviceType) {
   switch (deviceType) {
     case "Smartphone":
-      var nameSmartphone = document.getElementById("smartphoneBrand").value;
+      var brandSmartphone = document.getElementById("smartphoneBrand").value;
       var modelSmartphone = document.getElementById("smartphoneModel").value;
       var yearSmartphone = document.getElementById("smartphoneYear").value;
       return JSON.stringify({
-        name: nameSmartphone,
+        type: "Smartphone",
+        brand: brandSmartphone,
         model: modelSmartphone,
         year: yearSmartphone,
       });
@@ -36,7 +37,7 @@ function getDeviceInfo(deviceType) {
       var modelWearable = document.getElementById("smartphoneModel").value;
       var yearWearable = document.getElementById("smartphoneYear").value;
       return JSON.stringify({
-        name: nameWearable,
+        brand: nameWearable,
         model: modelWearable,
         year: yearWearable,
       });
@@ -61,7 +62,18 @@ function DeviceForm(props) {
 
 function ConfigModal(props) {
   return (
-    <Modal show={props.showModal} onHide={props.handleCloseModal}>
+    <Modal
+      show={props.showModal}
+      onHide={props.handleCloseModal}
+      onShow={() => {
+        if (props.fromDH == true) {
+          var json = JSON.parse(props.selectedDH);
+          document.getElementById("smartphoneBrand").value = json.brand;
+          document.getElementById("smartphoneModel").value = json.model;
+          document.getElementById("modal-button").click();
+        }
+      }}
+    >
       <Modal.Header closeButton>
         <Modal.Title>Add info about your device</Modal.Title>
       </Modal.Header>
@@ -70,13 +82,17 @@ function ConfigModal(props) {
       </Modal.Body>
       <Modal.Footer>
         <Button
+          id="modal-button"
           onClick={() => {
+            if (props.fromDH == true) {
+              props.setFromDH(false);
+            }
             props.addDeviceToDeviceHistory(getDeviceInfo(props.deviceType));
             props.handleCloseModal();
             props.handleShowResults();
           }}
         >
-          Add
+          {t("add")}
         </Button>
       </Modal.Footer>
     </Modal>
@@ -96,10 +112,20 @@ const Home = () => {
 
   const [deviceHistory, setdeviceHistory] = useState([]);
 
+  const [fromDH, setFromDH] = useState(false);
+  const [selectedDH, setSelectedDH] = useState("");
+
   function addDeviceToDeviceHistory(device) {
+    if (deviceHistory.find((d) => d == device)) return;
     if (deviceHistory.length == 5) deviceHistory.pop();
     setdeviceHistory([device, ...deviceHistory]);
   }
+
+  const f = function viewHistoryDeviceResults(dev) {
+    var json = JSON.parse(dev);
+    setDeviceType(json.type);
+    handleShowModal();
+  };
 
   return (
     <Container>
@@ -108,9 +134,19 @@ const Home = () => {
           <h1>{t("main_title")}</h1>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="align-items-end">
+        <Col className="col-10">
           <h2>{t("sub_title")}</h2>
+        </Col>
+        <Col>
+          {deviceHistory.length != 0 && (
+            <DeviceHistory
+              deviceHistory={deviceHistory}
+              f={f}
+              setFromDH={setFromDH}
+              setSelectedDH={setSelectedDH}
+            />
+          )}
         </Col>
       </Row>
       <Row style={{ margin: "20px" }}>
@@ -134,7 +170,6 @@ const Home = () => {
           {showResults ? <Results deviceType={deviceType} /> : t("no_results")}
         </Col>
       </Row>
-      <DeviceHistory deviceHistory={deviceHistory} />
       <ConfigModal
         showModal={showModal}
         handleCloseModal={handleCloseModal}
@@ -142,6 +177,9 @@ const Home = () => {
         handleShowResults={handleShowResults}
         deviceType={deviceType}
         addDeviceToDeviceHistory={addDeviceToDeviceHistory}
+        setFromDH={setFromDH}
+        fromDH={fromDH}
+        selectedDH={selectedDH}
       />
     </Container>
   );

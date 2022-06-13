@@ -64,7 +64,7 @@ export function LaptopModalBody(props) {
         <Form.Control type="number" min="2010" max={new Date().getFullYear()} />
       </Form.Group>
 
-      <Form.Group className="m-3" controlId="formBasicCheckbox">
+      <Form.Group className="m-3" controlId="laptopGPU">
         <Form.Check type="checkbox" label={t("has_external_gpu")} />
       </Form.Group>
     </Form>
@@ -74,22 +74,22 @@ export function LaptopModalBody(props) {
 export function DesktopPCModalBody(props) {
   return (
     <Form>
-      <Form.Group className="m-3" controlId="laptopBrand">
+      <Form.Group className="m-3" controlId="desktopPCBrand">
         <Form.Label> {t("brand")} </Form.Label>
         <Form.Control placeholder="Apple, Samsung..." />
       </Form.Group>
 
-      <Form.Group className="m-3" controlId="laptopModel">
+      <Form.Group className="m-3" controlId="desktopPCModel">
         <Form.Label> {t("model")} </Form.Label>
         <Form.Control />
       </Form.Group>
 
-      <Form.Group className="m-3" controlId="laptopYear">
+      <Form.Group className="m-3" controlId="desktopPCYear">
         <Form.Label> {t("year")} </Form.Label>
         <Form.Control type="number" min="2010" max={new Date().getFullYear()} />
       </Form.Group>
 
-      <Form.Group className="m-3" controlId="formBasicCheckbox">
+      <Form.Group className="m-3" controlId="desktopPCGPU">
         <Form.Check type="checkbox" label={t("has_external_gpu")} />
       </Form.Group>
     </Form>

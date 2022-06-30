@@ -27,16 +27,37 @@ function getDeviceInfo(deviceType) {
       });
 
     case "Laptop":
-      return {};
+      var brandLaptop = document.getElementById("laptopBrand").value;
+      var modelLaptop = document.getElementById("laptopModel").value;
+      var yearLaptop = document.getElementById("laptopYear").value;
+      var GPULaptop = document.getElementById("laptopGPU").checked;
+      return JSON.stringify({
+        type: "Laptop",
+        brand: brandLaptop,
+        model: modelLaptop,
+        year: yearLaptop,
+        gpu: GPULaptop,
+      });
 
     case "Desktop PC":
-      return {};
+      var brandDesktopPC = document.getElementById("desktopPCBrand").value;
+      var modelDesktopPC = document.getElementById("desktopPCModel").value;
+      var yearDesktopPC = document.getElementById("desktopPCYear").value;
+      var GPUDesktopPC = document.getElementById("desktopPCGPU").checked;
+      return JSON.stringify({
+        type: "Desktop PC",
+        brand: brandDesktopPC,
+        model: modelDesktopPC,
+        year: yearDesktopPC,
+        gpu: GPUDesktopPC,
+      });
 
     case "Wearable":
-      var nameWearable = document.getElementById("smartphoneName").value;
-      var modelWearable = document.getElementById("smartphoneModel").value;
-      var yearWearable = document.getElementById("smartphoneYear").value;
+      var nameWearable = document.getElementById("wearableName").value;
+      var modelWearable = document.getElementById("wearableModel").value;
+      var yearWearable = document.getElementById("wearableYear").value;
       return JSON.stringify({
+        type: "Wearable",
         brand: nameWearable,
         model: modelWearable,
         year: yearWearable,
@@ -68,9 +89,37 @@ function ConfigModal(props) {
       onShow={() => {
         if (props.fromDH == true) {
           var json = JSON.parse(props.selectedDH);
-          document.getElementById("smartphoneBrand").value = json.brand;
-          document.getElementById("smartphoneModel").value = json.model;
-          document.getElementById("modal-button").click();
+          switch (json.type) {
+            case "Smartphone":
+              document.getElementById("smartphoneBrand").value = json.brand;
+              document.getElementById("smartphoneModel").value = json.model;
+              document.getElementById("smartphoneYear").value = json.year;
+              document.getElementById("modal-button").click();
+              break;
+
+            case "Wearable":
+              document.getElementById("wearableBrand").value = json.brand;
+              document.getElementById("wearableModel").value = json.model;
+              document.getElementById("wearableYear").value = json.year;
+              document.getElementById("modal-button").click();
+              break;
+
+            case "Laptop":
+              document.getElementById("laptopBrand").value = json.brand;
+              document.getElementById("laptopModel").value = json.model;
+              document.getElementById("laptopYear").value = json.year;
+              document.getElementById("laptopGPU").checked = json.gpu;
+              document.getElementById("modal-button").click();
+              break;
+
+            case "Desktop PC":
+              document.getElementById("desktopPCBrand").value = json.brand;
+              document.getElementById("desktopPCModel").value = json.model;
+              document.getElementById("desktopPCYear").value = json.year;
+              document.getElementById("desktopPCGPU").checked = json.gpu;
+              document.getElementById("modal-button").click();
+              break;
+          }
         }
       }}
     >

@@ -2,6 +2,7 @@
     "main_title" : "Calcula tu huella medioambiental",
     "home": "Inicio",
     "about_us": "Sobre nosotros",
+    "about_us_text": "En general, las personas estamos acostumbradas a comprar productos sin saber que impacto tienen en nuestro entorno. Hay mucha informacioón pero no siempre es accesible.\nEste proyecto intenta dar al usuario una nueva fuente de información donde pueden consultar informacio ́n relacionada con el impacto que tienen sus dispositivos electroónicos de forma fácil.",
     "sub_title": "Añade un dispositivo",
     "desktop_pc": "Sobremesa",
     "laptop": "Portátil",

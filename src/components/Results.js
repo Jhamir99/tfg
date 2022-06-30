@@ -16,25 +16,126 @@ import {
   resultValuesWearable,
 } from "../utilities/Constants";
 
-
 export function Results(props) {
   function calculateResults() {
-    var yearElement = document.getElementById("smartphoneYear");
+    switch (props.deviceType) {
+      case "Smartphone":
+        var yearElement = document.getElementById("smartphoneYear");
 
-    if (yearElement == null) return 1;
+        if (yearElement == null) return 1;
 
-    var year = yearElement.value;
+        var year = yearElement.value;
 
-    if (year == "") return 1;
-    else year = parseFloat(year);
+        if (year == "") year = 2015;
+        else year = parseFloat(year);
 
-    var deltaYear = 2015 - year;
+        var deltaYear = 2015 - year;
 
-    if (deltaYear > 10) deltaYear = 10;
-    else if (deltaYear < -5) deltaYear = -5;
+        if (deltaYear > 5) deltaYear = 5;
+        else if (deltaYear < -5) deltaYear = -5;
 
-    const res = deltaYear < 0 ? 1 - 0.025 * -deltaYear : 1 + 0.025 * deltaYear;
-    return res;
+        var res =
+          deltaYear < 0
+            ? 1 - (0.5 * -deltaYear) / 5
+            : 1 + (0.5 * deltaYear) / 5;
+
+        var w = document.getElementById("smartphoneWidth");
+        var h = document.getElementById("smartphoneHeight");
+        var d = document.getElementById("smartphoneDepth");
+
+        if (w == null || h == null || d == null) return res;
+        if (w.value == "" || h.value == "" || d.value == "") return res;
+
+        res = w.value * h.value * d.value > 100 ? res * 1.05 : res;
+
+        return res;
+
+      case "Wearable":
+        var yearElement = document.getElementById("wearableYear");
+
+        if (yearElement == null) return 1;
+
+        var year = yearElement.value;
+
+        if (year == "") year = 2015;
+        else year = parseFloat(year);
+
+        var deltaYear = 2015 - year;
+
+        if (deltaYear > 5) deltaYear = 5;
+        else if (deltaYear < -5) deltaYear = -5;
+
+        var res =
+          deltaYear < 0
+            ? 1 - (0.5 * -deltaYear) / 5
+            : 1 + (0.5 * deltaYear) / 5;
+
+        var w = document.getElementById("wearableWidth");
+        var h = document.getElementById("wearableHeight");
+        var d = document.getElementById("wearableDepth");
+
+        if (w == null || h == null || d == null) return res;
+        if (w.value == "" || h.value == "" || d.value == "") return res;
+
+        res = w.value * h.value * d.value > 50 ? res * 1.05 : res;
+        return res;
+
+      case "Desktop PC":
+        var yearElement = document.getElementById("desktopPCYear");
+
+        if (yearElement == null) return 1;
+
+        var year = yearElement.value;
+
+        if (year == "") year = 2015;
+        else year = parseFloat(year);
+
+        var deltaYear = 2015 - year;
+
+        if (deltaYear > 5) deltaYear = 5;
+        else if (deltaYear < -5) deltaYear = -5;
+
+        var res =
+          deltaYear < 0
+            ? 1 - (0.5 * -deltaYear) / 5
+            : 1 + (0.5 * deltaYear) / 5;
+
+        var gpu = document.getElementById("desktopPCGPU");
+
+        if (gpu == null) return res;
+
+        res = gpu.checked ? res * 1.2 : res;
+
+        return res;
+
+      case "Laptop":
+        var yearElement = document.getElementById("laptopYear");
+
+        if (yearElement == null) return 1;
+
+        var year = yearElement.value;
+
+        if (year == "") year = 2015;
+        else year = parseFloat(year);
+
+        var deltaYear = 2015 - year;
+
+        if (deltaYear > 5) deltaYear = 5;
+        else if (deltaYear < -5) deltaYear = -5;
+
+        var res =
+          deltaYear < 0
+            ? 1 - (0.5 * -deltaYear) / 5
+            : 1 + (0.5 * deltaYear) / 5;
+
+        var gpu = document.getElementById("laptopGPU");
+
+        if (gpu == null) return res;
+
+        res = gpu.checked ? res * 1.2 : res;
+
+        return res;
+    }
   }
 
   function resultTitle(title) {

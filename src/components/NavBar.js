@@ -5,6 +5,7 @@ import cookies from "js-cookie";
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { COLORS, collpaseSize } from "../utilities/Constants";
 
+import "../styles/NavBar.css";
 import logo from "../logo.svg";
 
 function LangSelector(props) {
@@ -78,15 +79,15 @@ function NavBar(props) {
       collapseOnSelect
     >
       <Navbar.Brand className="ms-3">
-        <img src={logo} className="App-logo" alt="logo" height="34px" /> Logo
+        <img src={logo} className="App-logo mx-3" alt="logo" height="34px" /> Environmental print calculator
       </Navbar.Brand>
 
       <Navbar.Toggle className="me-3"/>
 
       <Navbar.Collapse>
-        <Nav className="mx-auto">
-          <Nav.Link href="/#">{t("home")}</Nav.Link>
-          <Nav.Link href="/#/about">{t("about_us")}</Nav.Link>
+        <Nav className="mx-auto navLinks">
+          <Nav.Link className="mx-3" href="/#">{t("home")}</Nav.Link>
+          <Nav.Link className="mx-3" href="/#/about">{t("about_us")}</Nav.Link>
         </Nav>
         <LangSelector />
       </Navbar.Collapse>

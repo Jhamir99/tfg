@@ -1,6 +1,6 @@
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { IoPhonePortraitOutline } from "react-icons/io5";
+import aboutUsImg from "../about_us_img.jpeg"
 
 const About = () => {
   const { t } = useTranslation();
@@ -8,7 +8,15 @@ const About = () => {
   return (
     <Container>
       <Row>
-        <Col>About</Col>
+        <Col className="m-5">
+          <h1>{t("about_us")}</h1>
+          {t("about_us_text")}
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Image src={aboutUsImg} fluid="true"></Image>
+        </Col>
       </Row>
     </Container>
   );
